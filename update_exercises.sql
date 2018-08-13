@@ -1,46 +1,38 @@
 USE codeup_test_db;
 
-SELECT *
+SELECT album_name
 FROM albums;
 
-SELECT *
-FROM albums
-WHERE sales = sales;
+SELECT sales AS 'Get sales of all the albums'
+FROM albums;
 
-SELECT 'Updated sales times 10' AS 'Exercise 1';
 UPDATE albums
 SET sales = (sales * 10)
 WHERE sales = sales;
 
-SELECT *
-FROM albums
-WHERE sales = sales;
+SELECT sales AS 'Updated sales times 10'
+FROM albums;
 
-SELECT *
+SELECT album_name  AS 'Get all albums released before 1980'
 FROM albums
 WHERE release_date < 1980;
 
-SELECT 'Moved albums released before 1980 back to the 1800s' AS 'Exercise 2';
 UPDATE albums
 SET release_date = (release_date - 100)
 WHERE release_date < 1980;
 
-SELECT *
+SELECT album_name AS 'Moved albums released before 1980 back to the 1800s'
 FROM albums
 WHERE release_date < 1980;
 
-SELECT *
+SELECT album_name AS 'All albums made by Michael Jackson'
 FROM albums
 WHERE artist = 'Michael Jackson';
 
-SELECT 'Changed artist Michael Jackson to Peter Jackson' AS 'Exercise 3';
 UPDATE albums
 SET artist = 'Peter Jackson'
 WHERE artist = 'Michael Jackson';
 
-SELECT *
+SELECT album_name AS 'Changed artist Michael Jackson to Peter Jackson'
 FROM albums
 WHERE artist = 'Peter Jackson';
-
-SELECT *
-FROM albums;
