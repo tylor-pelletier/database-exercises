@@ -2,7 +2,7 @@ USE employees;
 
 SELECT CONCAT(first_name, ' ', last_name)
 FROM employees
-WHERE last_name LIKE 'E%' OR last_name LIKE '%e';
+WHERE last_name LIKE 'E%' AND last_name LIKE '%e';
 
 SELECT CONCAT(DATEDIFF(CURDATE(), hire_date), ' DAYS')
 FROM employees
