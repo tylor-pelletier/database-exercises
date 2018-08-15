@@ -25,14 +25,12 @@ ORDER BY departments.dept_name ASC;
 
 -- EXERCISE 4
 SELECT titles.title AS 'Title', COUNT(titles.title) AS 'Count'
-FROM employees
-  JOIN titles
-    ON titles.emp_no = employees.emp_no
+FROM titles
   JOIN dept_emp
-    ON dept_emp.emp_no = employees.emp_no
+    ON dept_emp.emp_no = titles.emp_no
   JOIN departments
     ON departments.dept_no = dept_emp.dept_no
-WHERE titles.to_date > NOW() AND departments.dept_name = 'Customer Service'
+WHERE titles.to_date > NOW() AND dept_emp.to_date > NOW() AND departments.dept_name = 'Customer Service'
 GROUP BY titles.title;
 
 -- EXERCISE 5
