@@ -49,9 +49,6 @@ ORDER BY departments.dept_name ASC;
 
 
 
-
-
-
 USE join_test_db;
 
 DROP TABLE IF EXISTS roles;
