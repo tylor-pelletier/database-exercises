@@ -22,11 +22,8 @@ GROUP BY title;
 -- EXERCISE 3
 SELECT first_name, last_name
 FROM employees
-  JOIN titles
-    ON titles.emp_no = employees.emp_no
-WHERE employees.emp_no IN (
+WHERE emp_no IN (
   SELECT emp_no
   FROM dept_manager
   WHERE to_date > NOW()
-) AND titles.to_date > NOW()
-  AND employees.gender = 'F';
+) AND employees.gender = 'F';
